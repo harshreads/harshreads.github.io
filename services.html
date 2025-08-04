@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Harsh Reads Media</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <style>
+    :root {
+      --main-bg: #f9fafb;
+      --accent: #6b46c1;
+      --text-color: #1f2937;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--main-bg);
+      color: var(--text-color);
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      z-index: 999;
+    }
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+    .nav-logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      font-family: 'Playfair Display', serif;
+      color: var(--accent);
+    }
+    .nav-links a {
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      color: var(--text-color);
+      position: relative;
+    }
+    .nav-links a.active::after,
+    .nav-links a:hover::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: var(--accent);
+    }
+    .section-title {
+      text-align: center;
+      padding: 80px 20px 40px;
+      font-size: 2.5rem;
+      color: var(--accent);
+      font-family: 'Playfair Display', serif;
+    }
+    .services-grid {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 0 20px 80px;
+    }
+    .service-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+      padding: 30px;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    }
+    .service-card h3 {
+      margin-top: 10px;
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+    .service-card i {
+      font-size: 2rem;
+      color: var(--accent);
+    }
+    .tools-section {
+      text-align: center;
+      padding-bottom: 80px;
+    }
+    .tools-icons i {
+      font-size: 2.5rem;
+      margin: 20px;
+      color: var(--accent);
+    }
+    footer {
+      text-align: center;
+      padding: 40px;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav-logo">Harsh Reads Media</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <h1 class="section-title">Our Expertise</h1>
+  <div class="services-grid">
+    <div class="service-card">
+      <i class="fas fa-search"></i>
+      <h3>SEO Optimization</h3>
+      <p>Improve your search engine rankings and drive organic traffic with our expert SEO strategies designed to put your brand front and center.</p>
+    </div>
+    <div class="service-card">
+      <i class="fab fa-facebook"></i>
+      <h3>Social Media Marketing</h3>
+      <p>Engage your audience and build a strong brand community across all major platforms with dynamic SMM campaigns.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-pen-nib"></i>
+      <h3>Content Creation</h3>
+      <p>Captivate your audience with high-quality content that informs, entertains, and converts—tailored to your brand voice.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-bullhorn"></i>
+      <h3>PPC Campaigns</h3>
+      <p>Maximize your ROI with precisely targeted pay-per-click advertising, driving immediate visibility and qualified leads.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-chart-line"></i>
+      <h3>Web Analytics</h3>
+      <p>Gain actionable insights into user behavior and campaign performance with our in-depth analytics.</p>
+    </div>
+  </div>
+
+  <div class="tools-section">
+    <h2 class="section-title">Tools We Use</h2>
+    <div class="tools-icons">
+      <i class="fab fa-google"></i>
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-youtube"></i>
+      <i class="fab fa-pinterest"></i>
+      <i class="fab fa-quora"></i>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Harsh Reads Media. All rights reserved.
+  </footer>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray(".service-card").forEach(el => {
+      gsap.to(el, {
+        scrollTrigger: el,
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out"
+      });
+    });
+  </script>
+</body>
+</html>
