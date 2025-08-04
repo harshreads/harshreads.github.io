@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Harsh Reads</title>
+  <title>Harsh Reads Media</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
@@ -16,7 +16,7 @@
     }
     header {
       text-align: center;
-      padding: 80px 20px 40px;
+      padding: 100px 20px 60px;
       background: linear-gradient(135deg, #6b46c1, #b794f4);
       color: white;
       position: relative;
@@ -31,16 +31,43 @@
       font-size: 1.2rem;
       opacity: 0.9;
     }
+    .cta-buttons {
+      margin-top: 30px;
+    }
+    .cta-buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 24px;
+      background-color: #fff;
+      color: #6b46c1;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .cta-buttons a:hover {
+      background-color: #6b46c1;
+      color: white;
+    }
     section {
-      max-width: 800px;
+      max-width: 1000px;
       margin: 40px auto;
       padding: 20px;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #4c1d95;
+    }
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
     }
     .card {
       background: white;
       border-radius: 12px;
       padding: 30px;
-      margin-bottom: 30px;
       box-shadow: 0 8px 30px rgba(0,0,0,0.06);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       opacity: 0;
@@ -54,6 +81,15 @@
       opacity: 1;
       transform: translateY(0);
       transition: all 0.6s ease;
+    }
+    .tools {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .tools i {
+      font-size: 2rem;
+      margin: 15px;
+      color: #6b46c1;
     }
     footer {
       text-align: center;
@@ -78,23 +114,59 @@
 </head>
 <body>
   <header>
-    <h1>Harsh Reads</h1>
-    <p>Dive into a world of words, thoughts, and ideas</p>
+    <h1>Harsh Reads Media: Unlock your Digital Potential</h1>
+    <p>Data-driven strategies for measurable growth</p>
+    <div class="cta-buttons">
+      <a href="#contact">Get a Free Consultation</a>
+      <a href="#expertise">Explore our Services</a>
+    </div>
   </header>
 
-  <section>
-    <div class="card">📖 <strong>Book Reviews:</strong> Honest and in-depth reviews from a reader’s perspective.</div>
-    <div class="card">📝 <strong>Writing Journey:</strong> Follow my thoughts, musings, and author adventures.</div>
-    <div class="card">🎙️ <strong>Podcast Picks:</strong> What I’m listening to when I’m not reading.</div>
+  <section id="expertise">
+    <h2>Our Expertise</h2>
+    <div class="expertise-grid">
+      <div class="card">🔍 <strong>SEO Optimisation:</strong> Improve your search engine rankings and drive organic traffic with expert strategies designed to put your brand front and centre.</div>
+      <div class="card">📱 <strong>Social Media Marketing:</strong> Engage your audience and build a strong brand community across all major social platforms with our dynamic SMM campaigns.</div>
+      <div class="card">✍️ <strong>Content Creation:</strong> Captivate your audience with compelling, high-quality content that informs, entertains, and converts—tailored to your brand voice.</div>
+      <div class="card">💰 <strong>PPC Campaigns:</strong> Maximise your ROI with precisely targeted pay-per-click advertising, driving immediate visibility and qualified leads to your business.</div>
+      <div class="card">📊 <strong>Web Analytics:</strong> Gain actionable insights into user behaviour and campaign performance with our in-depth analytics, guiding smarter strategic decisions.</div>
+    </div>
+  </section>
+
+  <section class="tools">
+    <h2>Tools We Use</h2>
+    <div>
+      <i class="fab fa-google"></i>
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-youtube"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-pinterest"></i>
+      <i class="fab fa-quora"></i>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>Your Partner in Digital Growth</h2>
+    <p>At Harsh Reads Media, we're more than just a digital marketing agency; we're your dedicated partners in navigating the complex digital landscape. We empower entrepreneurs, startups, and growing brands to expand their online presence and achieve tangible business goals.</p>
+    <p>Our foundation is built on transparency, ethical practices, and a relentless focus on delivering measurable results. We believe in clear communication and strategies tailored to your unique aspirations.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Let's Discuss Your Growth</h2>
+    <p>Ready to elevate your brand's digital presence? Contact Harsh Reads Media today for a personalised consultation. We're excited to help you achieve your marketing goals.</p>
+    <p>Email: <a href="mailto:pawarharshad585@gmail.com">pawarharshad585@gmail.com</a></p>
+    <p>LinkedIn: <a href="#">(Add your LinkedIn link)</a></p>
+    <p>Instagram: <a href="#">(Add your Instagram link)</a></p>
+    <p>Address: Vasai East, Mumbai, Maharashtra 401208</p>
   </section>
 
   <footer>
     <div class="icons">
-      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
     </div>
-    <p>&copy; 2025 Harsh Reads. All rights reserved.</p>
+    <p>&copy; 2025 Harsh Reads Media. All rights reserved.</p>
   </footer>
 
   <script>
