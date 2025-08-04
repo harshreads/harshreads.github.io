@@ -3,49 +3,113 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Harsh Reads Media</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <title>Harsh Reads</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #f9fafb, #eef2f7);
+      color: #1f2937;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 80px 20px 40px;
+      background: linear-gradient(135deg, #6b46c1, #b794f4);
+      color: white;
+      position: relative;
+      animation: fadeInDown 1.2s ease-out;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+    section {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    .card:hover {
+      transform: translateY(0);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    }
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.6s ease;
+    }
+    footer {
+      text-align: center;
+      padding: 40px;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+    .icons a {
+      margin: 0 10px;
+      color: #6b46c1;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+    .icons a:hover {
+      color: #4c1d95;
+    }
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Harsh Reads Media</h1>
-    <p>Unlock your Digital Potential</p>
-    <p class="tagline">Data-driven strategies for measurable growth</p>
-    <div class="cta">
-      <a href="#contact" class="btn primary">Get a Free Consultation</a>
-      <a href="#services" class="btn">Explore Our Services</a>
-    </div>
+    <h1>Harsh Reads</h1>
+    <p>Dive into a world of words, thoughts, and ideas</p>
   </header>
 
-  <section class="logos">
-    <img src="https://dummyimage.com/80x40/333/aaa.png&text=Meta" alt="Meta" />
-    <img src="https://dummyimage.com/80x40/333/aaa.png&text=Google" alt="Google" />
-    <img src="https://dummyimage.com/80x40/333/aaa.png&text=Amazon" alt="Amazon" />
-    <img src="https://dummyimage.com/80x40/333/aaa.png&text=Netflix" alt="Netflix" />
+  <section>
+    <div class="card">📖 <strong>Book Reviews:</strong> Honest and in-depth reviews from a reader’s perspective.</div>
+    <div class="card">📝 <strong>Writing Journey:</strong> Follow my thoughts, musings, and author adventures.</div>
+    <div class="card">🎙️ <strong>Podcast Picks:</strong> What I’m listening to when I’m not reading.</div>
   </section>
 
-  <section id="services">
-    <h2>Our Expertise</h2>
-    <div class="grid">
-      <div class="card">🔍 <h3>SEO Optimization</h3><p>Improve your search rankings with expert SEO strategies.</p></div>
-      <div class="card">📱 <h3>Social Media Marketing</h3><p>Build a strong community across all platforms.</p></div>
-      <div class="card">📝 <h3>Content Creation</h3><p>Deliver high-quality content tailored to your voice.</p></div>
-      <div class="card">💰 <h3>PPC Campaigns</h3><p>Maximize ROI with precisely targeted ads.</p></div>
-      <div class="card">📈 <h3>Web Analytics</h3><p>Gain actionable insights and track performance.</p></div>
+  <footer>
+    <div class="icons">
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
     </div>
-  </section>
-
-  <section class="about">
-    <h2>Your Partner in Digital Growth</h2>
-    <p>At Harsh Reads Media, we empower brands to thrive in a digital-first world through honest, data-driven strategies.</p>
-  </section>
-
-  <footer id="contact">
-    <h3>Let's Discuss Your Growth</h3>
-    <p>📧 pawarharshad585@gmail.com</p>
-    <p>📍 Vasai East, Mumbai, Maharashtra 401208</p>
-    <p>🔗 <a href="https://www.linkedin.com/in/harshad-pawar-23947a188" target="_blank">LinkedIn</a> | <a href="https://instagram.com/harsh_reads" target="_blank">Instagram</a></p>
+    <p>&copy; 2025 Harsh Reads. All rights reserved.</p>
   </footer>
+
+  <script>
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => {
+      observer.observe(card);
+    });
+  </script>
 </body>
 </html>
